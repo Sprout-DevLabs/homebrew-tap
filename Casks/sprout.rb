@@ -37,9 +37,12 @@ cask "sprout" do
   fish_completion "completions/sprout.fish"
   zsh_completion "completions/_sprout"
 
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/sprout"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr",
+          args:           ["-dr", "com.apple.quarantine", "{{staged_path}}/sprout"],
+          writable_paths: ["sprout"],
+          writable_base:  :staged_path
     end
   end
 
