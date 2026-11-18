@@ -9,25 +9,25 @@ cask "sprout" do
     end
   end
 
-  version "0.6.0"
+  version "0.7.0"
 
   on_macos do
     on_arm do
-      sha256 "c85a8b23c9c89370c42e1aed75da4dd4aa18f42da39b4b5280dae1723e048660"
+      sha256 "872145bafede89342e006f95c5bddbd72d2ca15598b24f41c78760cc10ef4754"
       url "https://github.com/Sprout-DevLabs/sprout/releases/download/v#{version}/sprout_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "232f5fa6c1030844884782df0e6d4c4d63a3754a97a608c80212fb297b7a6a37"
+      sha256 "49c3b1dfc0b363b9575ef966bf1c7953905d985b48a6a4b9046a470d5fc19de8"
       url "https://github.com/Sprout-DevLabs/sprout/releases/download/v#{version}/sprout_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "cd5e03c1ce4364dd0a8d15cb3c2c0798c32b1ac4a040aaee7a2e48bd51cf7be7"
+      sha256 "fab6ebb636006fdd94effe1afbde0dadd265d5d54ea5a48b989e4c1de48f0a7c"
       url "https://github.com/Sprout-DevLabs/sprout/releases/download/v#{version}/sprout_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "a5c49f79e7e8b018fd007d127ea41d0404476f3f297e065e6a44477f168ace59"
+      sha256 "2cef4ff020d661d410a78ab2b5e0eec7df97aa472916cca9b964ed5d7a6e4205"
       url "https://github.com/Sprout-DevLabs/sprout/releases/download/v#{version}/sprout_#{version}_linux_amd64.tar.gz"
     end
   end
@@ -46,5 +46,5 @@ cask "sprout" do
   zsh_completion "completions/_sprout"
   fish_completion "completions/sprout.fish"
 
-  # No zap stanza required
+  zap :not_required
 end
